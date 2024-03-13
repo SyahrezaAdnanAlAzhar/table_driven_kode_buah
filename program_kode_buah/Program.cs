@@ -14,3 +14,21 @@ public class KodeBuah
         return kodeBuah[(int) buah];
     }
 }
+
+public class main
+{
+    public static void Main(String[] args)
+    {
+        Console.WriteLine("Masukkan nama buah yang ingin anda cari kodenya");
+        Console.Write("Nama Buah: ");
+        String inputBuah = Console.ReadLine();
+        if (Enum.TryParse<KodeBuah.Buah>(inputBuah, true, out KodeBuah.Buah buah))
+        {
+            Console.WriteLine($"Kode buah: {KodeBuah.getKodeBuah(buah)}");
+        }
+        else
+        {
+            Console.WriteLine("Nama buah yang anda cari tidak terdaftar");
+        }
+    }
+}
